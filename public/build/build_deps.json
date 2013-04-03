@@ -1,0 +1,127 @@
+[
+    {
+        "name": "default_bundle",
+        "modules": [
+            {
+                "name": "queue-manager",
+                "path": "npm://queue-manager",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "config",
+                "path": "config.coffee",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "queue-manager"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "commonjs-jquery",
+                "path": "npm://commonjs-jquery",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "config"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "idom-jquery",
+                "path": "npm://dc-idom",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "commonjs-jquery"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "console-logger",
+                "path": "npm://console-logger",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "commonjs-jquery"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "libprotein",
+                "path": "npm://libprotein",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "commonjs-jquery"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "libprotocol",
+                "path": "npm://libprotocol",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "libprotein"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "dna",
+                "path": "npm://dna-lang",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "idom-jquery",
+                    "libprotein",
+                    "libprotocol"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "calcbl",
+                "path": "calcbl.coffee",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "dna"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "app",
+                "path": "app.coffee",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "dna"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "ihelper",
+                "path": "npm://dc-helper",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "libprotocol"
+                ],
+                "prefix_meta": {}
+            },
+            {
+                "name": "libmonad",
+                "path": "npm://libmonad",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [
+                    "libprotein"
+                ],
+                "prefix_meta": {}
+            }
+        ]
+    }
+]

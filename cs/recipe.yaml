@@ -1,0 +1,41 @@
+abstract:
+    api_version: 5
+    # extends:
+
+#opts:
+#    minify: false
+
+
+# modules section is for registering application modules
+# you can read more detailed about modules format here - https://github.com/EugeneN/cafe/wiki/recipe-file
+modules:
+    - queue-manager:   [npm://queue-manager,    []]
+    - commonjs-jquery: [npm://commonjs-jquery,  [config]]
+    - libprotein:      [npm://libprotein,       [commonjs-jquery]]
+    - libprotocol:     [npm://libprotocol,      [libprotein]]
+    - libmonad:        [npm://libmonad,         [libprotein]]
+    - console-logger:  [npm://console-logger,   [commonjs-jquery]]
+    - idom-jquery:     [npm://dc-idom, ,        [commonjs-jquery]]
+    - dna:             [npm://dna-lang,         [idom-jquery, libprotein, libprotocol]]
+    - ihelper:         [npm://dc-helper,        [libprotocol]]
+    - config:          [config.coffee,          [queue-manager]]
+    - app:             [app.coffee,             [dna]]
+    - calcbl:          [calcbl.coffee,          [dna]]
+
+
+# Section for defining your bundles structure
+bundles:
+    default_bundle:
+        modules:
+            - queue-manager
+            - config
+            - commonjs-jquery
+            - libprotein
+            - console-logger
+            - libmonad
+            - libprotocol
+            - idom-jquery
+            - ihelper
+            - dna
+            - app
+            - calcbl

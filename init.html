@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cafe init file</title>
+</head>
+<body>
+    <style type='text/css'>
+        table {
+            border: 1px solid grey;
+        }
+        input[type=text] {
+            width: 80px;
+        }
+    </style>
+
+    <table>
+        <tr>
+            <td colspan=3>
+                <input type=text
+                       id='calc'
+                       data-extend='Calc'
+                       data-subscribe='
+                            on-stack-change : render-stack | setValue
+                       '
+                 />
+            </td>
+        </tr>
+        <tr>
+            <td><button data-subscribe='click : 1 | push!@calc'>1</button></td>
+            <td><button data-subscribe='click : 2 | push!@calc'>2</button></td>
+            <td><button data-subscribe='click : 3 | push!@calc'>3</button></td>
+
+            <td><button data-subscribe='click : "+" | push!@calc'>+</button></td>
+        </tr>
+        <tr>
+            <td><button data-subscribe='click : 4 | push!@calc'>4</button></td>
+            <td><button data-subscribe='click : 5 | push!@calc'>5</button></td>
+            <td><button data-subscribe='click : 6 | push!@calc'>6</button></td>
+
+            <td><button data-subscribe='click : "-" | push!@calc'>-</button></td>
+        </tr>
+        <tr>
+            <td><button data-subscribe='click : 7 | push!@calc'>7</button></td>
+            <td><button data-subscribe='click : 8 | push!@calc'>8</button></td>
+            <td><button data-subscribe='click : 9 | push!@calc'>9</button></td>
+
+            <td><button data-subscribe='click : "+" | push!@calc'>&nbsp;</button></td>
+        </tr>
+        <tr>
+            <td><button data-subscribe='click : reset!@calc'>c</button></td>
+            <td><button data-subscribe='click : 0 | push!@calc'>0</button></td>
+
+            <td><button data-nosubscribe=''>&nbsp;</button></td>
+            <td><button data-subscribe='click : do-calc@calc'>=</button></td>
+        </tr>
+    </table>
+
+<script src="./public/build/default_bundle.js"></script>
+<script>(function(root){require('app').run()}(window))</script>
+</body>
+</html>

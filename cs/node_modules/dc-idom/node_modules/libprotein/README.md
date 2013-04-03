@@ -1,0 +1,4 @@
+libprotein
+==========
+
+Source of proteins
