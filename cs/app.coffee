@@ -1,7 +1,8 @@
 module.exports =
     run: ->
-        qm = require 'queue-manager'
+        config = require 'config'
         {dispatch_impl} = require 'libprotocol'
+        qm = require 'queue-manager'
         {info} = dispatch_impl 'ILogger', 'App'
         idom = dispatch_impl 'IDom'
 

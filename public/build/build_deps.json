@@ -83,8 +83,8 @@
                 "prefix_meta": {}
             },
             {
-                "name": "calcbl",
-                "path": "calcbl.coffee",
+                "name": "calc",
+                "path": "calc.coffee",
                 "type": "commonjs",
                 "location": "fs",
                 "deps": [

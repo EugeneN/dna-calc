@@ -20,7 +20,7 @@ modules:
     - ihelper:         [npm://dc-helper,        [libprotocol]]
     - config:          [config.coffee,          [queue-manager]]
     - app:             [app.coffee,             [dna]]
-    - calcbl:          [calcbl.coffee,          [dna]]
+    - calc:            [calc.coffee,            [dna]]
 
 
 # Section for defining your bundles structure
@@ -38,4 +38,4 @@ bundles:
             - ihelper
             - dna
             - app
-            - calcbl
+            - calc
