@@ -28,29 +28,24 @@ module.exports =
                 $error$ = false
 
                 OPS =
-                    '+': (s) -> if s.length > 1 then s.push (s.pop() + s.pop()) else (error s)
-                    '-': (s) -> if s.length > 1 then s.push (s.pop() - s.pop()) else (error s)
-                    '*': (s) -> if s.length > 1 then s.push (s.pop() * s.pop()) else (error s)
-                    '/': (s) -> if s.length > 1 then s.push (s.pop() / s.pop()) else (error s)
+                    '+': (s) -> if s.length > 1 then s.push (s.pop() + s.pop()) else (sorry s)
+                    '-': (s) -> if s.length > 1 then s.push (s.pop() - s.pop()) else (sorry s)
+                    '*': (s) -> if s.length > 1 then s.push (s.pop() * s.pop()) else (sorry s)
+                    '/': (s) -> if s.length > 1 then s.push (s.pop() / s.pop()) else (sorry s)
                     '?': (s) -> debug s
 
                 is_op = (v) -> v in (Object.keys OPS)
 
-                error = -> 
+                sorry = ->
                     $stack$ = ['E','R','R','O','R']
                     $error$ = true
-                    pub 'error'
+                    pub 'fail'
 
-                check = (f, v) ->
-                    if $error$
-                        debug "Error state"
-                        pub 'error'
-                    else
-                        f v
+                check = (f, v) -> if $error$ then (pub 'fail') else (f v)
 
                 push = (v) ->
-                    if is_op v then (OPS[v] $stack$) else ($stack$.push v)
-                    error() if $stack$.length > 7
+                    if (is_op v) then (OPS[v] $stack$) else ($stack$.push v)
+                    sorry() if $stack$.length > 7
                     pub 'on-stack-change', $stack$
 
                 pop = ->
@@ -59,16 +54,11 @@ module.exports =
 
 
                 'push!': partial check, push
-
                 'pop!': partial check, pop
-
                 'stack-change?': partial sub, 'on-stack-change'
-
-                'error?': partial sub, 'error'
-
+                'error?': partial sub, 'fail'
                 'reset!': ->
                     $stack$ = []
                     $error$ = false
-                    debug 'reset', $stack$
                     pub 'on-stack-change', $stack$
 

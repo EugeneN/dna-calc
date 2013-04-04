@@ -8,7 +8,11 @@
                 "type": "commonjs",
                 "location": "fs",
                 "deps": [],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "queue-manager",
+                    "npm_module_name": "queue-manager"
+                }
             },
             {
                 "name": "config",
@@ -28,7 +32,11 @@
                 "deps": [
                     "config"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "commonjs-jquery",
+                    "npm_module_name": "commonjs-jquery"
+                }
             },
             {
                 "name": "idom-jquery",
@@ -38,7 +46,11 @@
                 "deps": [
                     "commonjs-jquery"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "dc-idom",
+                    "npm_module_name": "dc-idom"
+                }
             },
             {
                 "name": "console-logger",
@@ -48,7 +60,11 @@
                 "deps": [
                     "commonjs-jquery"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "console-logger",
+                    "npm_module_name": "console-logger"
+                }
             },
             {
                 "name": "libprotein",
@@ -58,7 +74,11 @@
                 "deps": [
                     "commonjs-jquery"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "libprotein",
+                    "npm_module_name": "libprotein"
+                }
             },
             {
                 "name": "libprotocol",
@@ -68,7 +88,11 @@
                 "deps": [
                     "libprotein"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "libprotocol",
+                    "npm_module_name": "libprotocol"
+                }
             },
             {
                 "name": "dna",
@@ -80,7 +104,11 @@
                     "libprotein",
                     "libprotocol"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "dna-lang",
+                    "npm_module_name": "dna-lang"
+                }
             },
             {
                 "name": "calc",
@@ -110,7 +138,11 @@
                 "deps": [
                     "libprotocol"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "dc-helper",
+                    "npm_module_name": "dc-helper"
+                }
             },
             {
                 "name": "libmonad",
@@ -120,7 +152,11 @@
                 "deps": [
                     "libprotein"
                 ],
-                "prefix_meta": {}
+                "prefix_meta": {
+                    "prefix": "npm",
+                    "npm_path": "libmonad",
+                    "npm_module_name": "libmonad"
+                }
             }
         ]
     }

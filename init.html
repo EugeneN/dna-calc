@@ -6,7 +6,8 @@
 <body>
     <style type='text/css'>
         table {
-            border: 1px solid grey;
+            border: 1px solid gray;
+            display: inline-block;
         }
         .ok {
             width: 125px;
@@ -81,6 +82,58 @@
 
             <td><button class='info' data-subscribe='click : "Simple stack calculator" | alert'>?</button></td>
             <td><button class='op' data-subscribe='click : "/" | push!@calc'>/</button></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td colspan=4>
+                <input type=text
+                       id='calc2'
+                       class='ok'
+                       data-extend='Calc Helper2'
+                       data-subscribe=
+                       ' stack-change? : join " " | setValue, debug
+                       ; error? : ["error" "ok"] | toggleClass | wait 300 | ["error" "ok"] | toggleClass | wait 300
+                                | ["error" "ok"] | toggleClass | wait 300 | ["error" "ok"] | toggleClass | wait 300
+                                | ["error" "ok"] | toggleClass | wait 300 | ["error" "ok"] | toggleClass | wait 300
+                       '
+                 />
+            </td>
+        </tr>
+        <tr>
+
+            <td><button class='reset' data-subscribe='click : pop!@calc2'>&lt;</button></td>
+            <td><button class='reset' data-subscribe='click : reset!@calc2'>c</button></td>
+            <td colspan=2 class=logo>Calc<sup>&copy;</sup></td>
+        </tr>
+        <tr>
+            <td><button class='digit' data-subscribe='click : 1 | push!@calc2'>1</button></td>
+            <td><button class='digit' data-subscribe='click : 2 | push!@calc2'>2</button></td>
+            <td><button class='digit' data-subscribe='click : 3 | push!@calc2'>3</button></td>
+
+            <td><button class='op' data-subscribe='click : "+" | push!@calc2'>+</button></td>
+        </tr>
+        <tr>
+            <td><button class='digit' data-subscribe='click : 4 | push!@calc2'>4</button></td>
+            <td><button class='digit' data-subscribe='click : 5 | push!@calc2'>5</button></td>
+            <td><button class='digit' data-subscribe='click : 6 | push!@calc2'>6</button></td>
+
+            <td><button class='op' data-subscribe='click : "-" | push!@calc2'>-</button></td>
+        </tr>
+        <tr>
+            <td><button class='digit' data-subscribe='click : 7 | push!@calc2'>7</button></td>
+            <td><button class='digit' data-subscribe='click : 8 | push!@calc2'>8</button></td>
+            <td><button class='digit' data-subscribe='click : 9 | push!@calc2'>9</button></td>
+
+            <td><button class='op' data-subscribe='click : "*" | push!@calc2'>*</button></td>
+        </tr>
+        <tr>
+            <td><button class='digit' data-subscribe='click : "." | push!@calc2'>,</button></td>
+            <td><button class='digit' data-subscribe='click : 0 | push!@calc2'>0</button></td>
+
+            <td><button class='info' data-subscribe='click : "Simple stack calculator" | alert'>?</button></td>
+            <td><button class='op' data-subscribe='click : "/" | push!@calc2'>/</button></td>
         </tr>
     </table>
 
